@@ -9,9 +9,9 @@ import (
 	"strings"
 )
 
-func main () {
+func main() {
 	flag.Parse()
-	args := flag.Args();
+	args := flag.Args()
 	for _, el := range args {
 		fmt.Println("Processing " + el)
 		file, err := os.Open(el)
@@ -19,7 +19,7 @@ func main () {
 			fmt.Println("Unable to open " + el)
 			continue
 		}
-		items := []string{ }
+		items := []string{}
 		reader := bufio.NewReader(file)
 		for {
 			line, err := reader.ReadString('\n')
@@ -41,7 +41,7 @@ func main () {
 		}
 		out.Write(j)
 		out.Close()
-		
+
 		file.Close()
 	}
 }
