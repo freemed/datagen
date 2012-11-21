@@ -11,7 +11,12 @@ cat dist.male.first | cut -d' ' -f1 > data/names/dist.male.first.txt
 
 tools/txt2json/txt2json data/names/*.txt
 
+wget -c http://sourceforge.net/projects/zips/files/zips/zips.csv.zip/zips.csv.zip
+unzip zips.csv.zip
+mv zips.csv data/postal/ -v
+
 rm -vf \
 	dist.*.* \
-	data/names/*.txt
+	data/names/*.txt \
+	zips.csv.zip
 
